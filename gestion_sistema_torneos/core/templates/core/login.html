@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} login {% endblock %}</title>
+    
+    
+</head> 
+
+<body>
+
+    {% block content %}
+
+    <form method="post" action="{% url 'autentificar' %}">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+
+                <div class="fadeIn first">
+                    <h2 class="titulo">Sistema Gestion De Torneos</h2>
+                </div>
+                <div>
+                    <label for="login" class="label">Usuario</label> <br>
+                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="ingrese usuario">
+                    <label for="password" class="label">Contraseña</label> <br>
+                    <input type="password" id="password" class="fadeIn second" name="password" placeholder="ingrese contraseña">
+                    <input type="submit" class="fadeIn fourth" value="Enviar">
+             
+                
+                </div>
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="{% url 'loginNuevo' %}">no te has registrado?</a>
+                </div>
+
+            </div>
+            <div id="error">{{error}}</div>
+        </div>
+    </form>
+    {% endblock %}
+
+
+</body>
+
+</html>

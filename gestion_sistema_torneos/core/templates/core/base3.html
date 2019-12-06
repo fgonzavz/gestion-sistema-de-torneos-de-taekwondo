@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+
+    <link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/equipos/css/estilos.css">
+    <link rel="stylesheet" href="/static/css/logo.css">
+    <link rel="stylesheet" href="/static/css/titulo.css">
+   
+    <link rel="stylesheet" href="/static/css/tabla.css">
+  
+
+    {% block javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="/static/equipos/js/confirmacion.js"></script>
+   {% endblock %}
+    
+
+    <!-- <link rel="stylesheet" href="/static/css/logo.css">
+    <link rel="stylesheet" href="/static/css/otro.css">
+   
+     -->
+
+
+
+
+</head>
+
+<body>
+
+
+    <header class="fija">
+
+        <img src="/static/img/logo.png" alt="Logo" class="logo">
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}"> Inicio </a>
+                </li>
+                <li>
+                    <a href="{% url 'equipos' %}"> Equipos </a>
+                </li>
+                <li>
+                    <a href="{% url 'calendario' %}"> Calendario </a>
+                </li>
+                <li>
+                    <a href="{% url 'listado_equipos' %}"> listado_equipos </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'nuevoEquipo' %}"> nuevoEquipo </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'nosotros' %}"> Nosotros </a>
+                </li>
+                 <!-- {% if user.is_authenticated %}
+                <li>
+                        <a href="#"> {{user.username}} </a>
+                    </li>
+                    {% endif %} -->
+              
+
+                <li class="cerrar-session">
+                    <a href="{% url 'login' %}"> Cerrar Seccion </a> 
+                   
+                </li>
+            </ul>
+        </nav>
+
+
+
+    </header>
+
+
+    <div class="block">
+    {% block content %}
+
+
+
+    {% endblock %}
+
+</div>
+
+    <footer class="hide_on_mobile">
+        <div>
+            <img src="/static/img/logo.png" alt="logo" class="logo_footer">
+        </div>
+
+        <div class="centro">
+            <h4>todos los derechos reservados &copy;</h4>
+
+
+            <img class="redes" src="/static/img/instagram.png" alt="">
+            <img class="redes" src="/static/img/facebook.png" alt="">
+            <img class="redes" src="/static/img/twitter.png" alt="">
+            <img class="redes" src="/static/img/git.png" alt="">
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

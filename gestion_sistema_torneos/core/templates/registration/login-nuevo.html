@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} Registrar {% endblock %}</title>
+
+    {% load crispy_forms_tags %}
+
+
+
+
+    <!--   <link href="{{MEDIA_URL}}/css/login.css" rel="stylesheet"> 
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/static/css/login-nuevo.css">
+
+</head>
+
+<body>
+
+
+    {% block content %}
+
+    <form action="" method="POST" class="formulario">
+
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                {% csrf_token %}
+
+                <div class="fadeIn first">
+                    <h2 class="titulo">Registro Sistema Gestion De Torneos</h2>
+                </div>
+
+
+                {{form | crispy }}
+
+                <div id="formFooter">
+                    <input type="reset" value="limpiar">
+                    <input type="submit" value="Registar">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {% endblock %}
+
+
+</body>
+
+</html>

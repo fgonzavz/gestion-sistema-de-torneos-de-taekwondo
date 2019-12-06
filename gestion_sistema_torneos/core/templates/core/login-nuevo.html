@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} Registrar {% endblock %}</title>
+    
+
+  <!--   <link href="{{MEDIA_URL}}/css/login.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="/static/login-nuevo.css">
+ 
+ 
+</head>
+<body>
+
+
+    {% block content %}
+
+    <form action="">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+
+                <div class="fadeIn first">
+                    <h2 class="titulo">Registro Sistema Gestion De Torneos</h2>
+                </div>
+
+                
+                    <label for="login" class="label">Usuario</label> <br>
+                    <input type="text" id="login" class="fadeIn second" name="login" placeholder="ingrese usuario" required>
+                    <label for="password" class="label">Contraseña</label> <br>
+                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="ingrese contraseña" required>
+                    <label for="correo" class="label">Correo</label> <br>
+                    <input type="email" placeholder="ingrese correo" id="correo" class="email" name="login">
+                     
+          
+                <div id="formFooter">
+                    <input type="submit" class="fadeIn fourth" value="Registrar"  href="{% url 'login' %}"  >
+                </div>
+                
+               
+
+
+            </div>
+        </div>
+        <div id="error">{{error}}</div>
+    </form>
+    {% endblock %}
+
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% extends 'core/base3.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado Equipos</title>
+
+    {% load static %}
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+    {% block content %}
+
+    
+
+    <div class="contenido-tabla">
+            
+
+        <table class="table" border="1"  >
+            <tr>
+                <th >Nombre</th>
+                <th>Ciudad</th>
+                <th>Maestro</th>
+                <th>Opciones</th>
+            </tr>
+
+            {% for e in equipos  %}
+            <tr>
+                <td>{{e.nombre}}</td>
+                <td>{{e.ciudad}}</td>
+                <td>{{e.maestro}}</td>
+                <td>
+                    <a href="{% url 'modificar_equipo' e.id %}">Modificar</a>
+                    <a href="#" onclick="confirmarEliminacion( {{e.id}} )">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>

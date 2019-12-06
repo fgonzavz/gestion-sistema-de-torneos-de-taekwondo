@@ -1,0 +1,33 @@
+
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+ 
+.centrado{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.centrado h1{
+    color: #fff;
+    font-size: 80px;
+    
+    
+}
+.centrado h2{
+    color: #fff;
+    font-size: 60px;
+    font-family: cursive;
+    
+
+}
+.princi{
+    filter: brightness(40%);
+    width: 1550px;
+}
+
+

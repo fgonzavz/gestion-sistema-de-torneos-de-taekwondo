@@ -1,0 +1,51 @@
+{% extends 'core/base2.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %} Principal {% endblock %}l</title>
+  {% load static %}
+
+
+
+</head>
+
+<body>
+
+  {% block content %}
+
+
+
+  <main>
+
+
+
+    <div class="contenedor">
+
+      <!-- <img  class="princi" src="/static/img/tae.jpg" alt="imagen-principal"> -->
+
+     <div><img  class="princi" src="/static/img/tae.jpg" alt="imagen-principal"></div> 
+
+      <div class="centrado">
+        <h2>Bienvenido </h2>
+        <h1>Al Sistema Gestion De Torneos</h1>
+      </div>
+    </div>
+
+  </main>
+
+
+  {% endblock %}
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+{% extends 'core/base3.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado maestro</title>
+
+    {% load static %}
+
+
+
+
+</head>
+
+<body>
+
+
+    {% block content %}
+
+
+    <h1>listado de maestro</h1>
+
+    <!--<table>
+      <tr>
+          <th>nombre</th>
+          <th>apellido</th>
+          <th>grado</th>
+          <th>telefono</th>
+      </tr>
+      
+      {% for m in maestros %}
+     
+      <tr>
+          <td>{{ m.nombre }}</td>
+          <td>{{ m.apellido }}</td>
+          <td>{{ m.grado }}</td>
+          <td>{{ m.telefono }}</td>
+          <td>
+            <a href="{% url 'modificar_maestro' m.id %}">Modificar</a>
+            <a href="#" onclick="confirmarEliminacion2( {{ m.id }} )">Eliminar</a>
+        </td>
+      </tr>
+ 
+      {% endfor %}
+
+  </table> -->
+
+
+
+
+    <div class="contenido-tabla">
+
+
+        <table class="table" border="1">
+            <tr>
+                <th>nombre</th>
+                <th>apellido</th>
+                <th>grado</th>
+                <th>telefono</th>
+            </tr>
+
+            {% for m in maestros  %}
+            <tr>
+                <td>{{ m.nombre }}</td>
+                <td>{{ m.apellido }}</td>
+                <td>{{ m.grado }}</td>
+                <td>{{ m.telefono }}</td>
+                <td>
+                    <a href="{% url 'modificar_maestro' m.id %}">Modificar</a>
+                    <a href="#" onclick="confirmarEliminacion2( {{m.id}} )">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+
+    {% endblock %}
+
+</body>
+
+</html>

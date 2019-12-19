@@ -32,7 +32,12 @@ urlpatterns = [
     path('listado_equipos/', views.listadoEquipo, name='listado_equipos'),
     path('nuevoEquipo/', views.nuevoEquipo, name='nuevoEquipo'),
     path('modificar_equipo/<id>/', views.modificar_equipo, name='modificar_equipo'),
+    path('modificar_maestro/<id>/', views.modificar_maestro, name='modificar_maestro'),
     path('eliminar_equipo/<id>/', views.eliminar_equipo, name='eliminar_equipo'),
+    path('eliminar_maestro/<id>/', views.eliminar_maestro, name='eliminar_maestro'),
+    path('listado_maestro/', views.listado_maestro, name='listado_maestro'),
+    path('nuevo_maestro/', views.nuevo_maestro, name='nuevo_maestro'),
+    
     path('accounts/', include('django.contrib.auth.urls')),
 
     # path('base/', views.base, name='base'),

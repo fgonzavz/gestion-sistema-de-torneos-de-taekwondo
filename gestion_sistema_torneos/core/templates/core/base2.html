@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/static/css/logo.css">
     <link rel="stylesheet" href="/static/css/titulo.css">
     <link rel="stylesheet" href="/static/css/nuevo-equipo.css">
+    <link rel="stylesheet" href="/static/css/nuevo_maestro.css">
     
 
     
@@ -20,6 +21,7 @@
     {% block javascript %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="/static/equipos/js/confirmacion.js"></script>
+    <script src="/static/js/eliminar_maestro.js"></script>
    {% endblock %}
     
 
@@ -56,8 +58,20 @@
                 </li>
 
                 <li>
+                    <a href="{% url 'listado_maestro' %}"> listado maestros </a>
+                </li>
+
+                <li>
                     <a href="{% url 'nuevoEquipo' %}"> nuevo Equipo </a>
                 </li>
+
+                <li>
+                    <a href="{% url 'nuevo_maestro' %}"> nuevo maestro </a>
+                </li>
+
+
+
+
 
 
                 <li>

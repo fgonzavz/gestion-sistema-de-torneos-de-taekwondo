@@ -1,7 +1,7 @@
-function confirmarEliminacion(id){
+function confirmarEliminacion2(id){
 
     Swal.fire({
-        title: 'Estas seguro?',
+        title: 'Estas seguro que quieres eliminar el maestro?',
         text: "NO podrás deshacer esta acción!",
         icon: 'warning',
         showCancelButton: true,
@@ -14,11 +14,9 @@ function confirmarEliminacion(id){
 
           //redirigir al iusuario a la ruta de eliminar
 
-          window.location.href = "/eliminar_equipo/"+id+"/";
-         
+          window.location.href = "/eliminar_maestro/"+id+"/";
 
         }
 
       })
 }
-

@@ -19,6 +19,7 @@
     {% block javascript %}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="/static/equipos/js/confirmacion.js"></script>
+    <script src="/static/js/eliminar_maestro.js"></script>
    {% endblock %}
     
 
@@ -51,11 +52,19 @@
                     <a href="{% url 'calendario' %}"> Calendario </a>
                 </li>
                 <li>
-                    <a href="{% url 'listado_equipos' %}"> listado_equipos </a>
+                    <a href="{% url 'listado_equipos' %}"> listado equipos </a>
                 </li>
 
                 <li>
-                    <a href="{% url 'nuevoEquipo' %}"> nuevoEquipo </a>
+                    <a href="{% url 'listado_maestro' %}"> listado maestros </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'nuevoEquipo' %}"> nuevo Equipo </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'nuevo_maestro' %}"> nuevo maestro </a>
                 </li>
 
 

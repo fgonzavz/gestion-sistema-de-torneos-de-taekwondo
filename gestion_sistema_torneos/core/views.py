@@ -1,8 +1,8 @@
 from django.shortcuts import render,HttpResponse,redirect
 from .models import Equipo
-from .forms import equipoForm, CustomUserForm
+from .forms import equipoForm, CustomUserForm, maestroForm
 from django.contrib.auth import login,authenticate
-
+from .models import Maestro
 
 # Create your views here.
 
@@ -105,3 +105,50 @@ def eliminar_equipo(request,id):
     equipos.delete()
 
     return redirect(to="listado_equipos")
+
+def listado_maestro(request):
+    maestros = Maestro.objects.all()
+    data={
+        'maestros':maestros
+    }
+    return render(request, 'core/listado_maestro.html',data)
+
+
+def nuevo_maestro(request):
+
+    data = {
+        'form':maestroForm()
+    }
+
+    if request.method == 'POST':
+        formulario = maestroForm(request.POST,files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Guardado correctamente"
+    
+    return render(request,"core/nuevo_Maestro.html",data)
+
+
+def modificar_maestro(request,id):
+    maestros = Maestro.objects.get(id=id)
+    data = {
+        'form':maestroForm(instance=maestros)
+    }
+
+    if request.method == 'POST':
+        formulario = maestroForm(data=request.POST,instance=maestros,files=request.FILES)
+
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje'] = "Modificado correctamente"
+            data['form'] = maestroForm(instance=Maestro.objects.get(id=id))
+
+    
+    return render(request,"core/modificar_maestro.html",data)
+
+
+def eliminar_maestro(request,id):
+    maestros = Maestro.objects.get(id=id)
+    maestros.delete()
+
+    return redirect(to="listado_maestro")
